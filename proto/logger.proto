@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package logger;
+
+message LogMessage {
+    string level = 1;
+    string message = 2;
+    string service = 3;
+    string traceId = 4;
+    string timestamp = 5;
+    map<string, string> additionalData = 6;
+}
+
+service LoggerService {
+    rpc Log (LogMessage) returns (LogResponse);
+}
+
+message LogResponse {
+    bool success = 1;
+}
