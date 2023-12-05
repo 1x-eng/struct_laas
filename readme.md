@@ -33,7 +33,7 @@ go run server/main.go
 ## Testing
 1. You could use a client of your choice - pick your poison, but, you'll need to write some code to connect to the gRPC server. (hint: `grpc.Dial(<server>)` if using golang)
 
-2. If you want something quick and dirty, `gRPCurl` could be an option. 
+2. If you want something quick and dirty, `gRPCurl` could be an option. (or any other grpc clients [here](https://github.com/grpc-ecosystem/awesome-grpc#tools) perhaps?)
 
 ```sh
 grpcurl -plaintext -d '{
