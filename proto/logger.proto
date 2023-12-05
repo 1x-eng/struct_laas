@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package logger;
 
+option go_package = "gen/logger";
+
 message LogMessage {
     string level = 1;
     string message = 2;
