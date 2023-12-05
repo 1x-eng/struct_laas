@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	lis, err := net.Listen("tcp", ":50051")
+	lis, err := net.Listen("tcp", ":50052")
 	if err != nil {
-		log.Fatalf("failed to listen: %v", err)
+		log.Fatalf("oops, failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
 	logservice.Register(s)
@@ -20,8 +20,8 @@ func main() {
 	// TODO: Maybe enable this only in dev.
 	reflection.Register(s)
 
-	log.Printf("server listening at %v", lis.Addr())
+	log.Printf("struct_laas gRPC server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %v", err)
+		log.Fatalf("oops, failed to serve: %v", err)
 	}
 }
